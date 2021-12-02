@@ -1,15 +1,10 @@
-Copyright (C) 2020 The LineageOS Project
+Copyright (C) 2022 The LineageOS Project
 
 Unified Device Tree for Xiaomi POCO X3 NFC / X3
 ===============================================
 
 The Xiaomi POCO X3 NFC (codename _"surya"_) and the POCO X3 (codename _"karna"_) are mid range 
 smartphones from Xiaomi's sub-brand Redmi and Poco, respectively.
-
-Poco X3 was announced and released in September 2020.
-
-The Poco X3 with NFC is sold as global and UE variants, while the Poco X3 without NFC is 
-commercialized manily in India.
 
 ## Device specifications
 
