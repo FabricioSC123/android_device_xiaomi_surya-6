@@ -24,6 +24,9 @@ $(call inherit-product, device/xiaomi/surya/device.mk)
 # Inherit some common XPerience stuff.
 $(call inherit-product, vendor/xperience/config/common.mk)
 
+# With GAPPS
+WITH_GMS := true
+
 PRODUCT_NAME := xperience_surya
 PRODUCT_DEVICE := surya
 PRODUCT_BRAND := POCO
