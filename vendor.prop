@@ -219,3 +219,6 @@ persist.vendor.ssr.restart_level=ALL_ENABLE
 
 # WiFi
 wifi.aware.interface=wifi-aware0
+
+# Recovery
+persist.sys.binary_xml=false
