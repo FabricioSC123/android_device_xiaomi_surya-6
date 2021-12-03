@@ -124,7 +124,6 @@ TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_USE_LATEST_CLANG := true
 TARGET_KERNEL_CONFIG := vendor/surya-perf_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/surya
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # LMKD
 TARGET_LMKD_STATS_LOG := true
