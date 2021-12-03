@@ -30,6 +30,8 @@
 #include <vector>
 
 #include <android-base/properties.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
@@ -73,6 +75,46 @@ void set_ro_product_prop(const std::string &prop, const std::string &value) {
     }
 };
 
+/* From Magisk@jni/magiskhide/hide_utils.c */
+static const char *snet_prop_key[] = {
+    "ro.boot.vbmeta.device_state",
+    "ro.boot.verifiedbootstate",
+    "ro.boot.flash.locked",
+    "ro.boot.veritymode",
+    "ro.boot.warranty_bit",
+    "ro.warranty_bit",
+    "ro.debuggable",
+    "ro.secure",
+    "ro.build.type",
+    "ro.build.tags",
+    "ro.build.selinux",
+    NULL
+};
+
+ static const char *snet_prop_value[] = {
+    "locked",
+    "green",
+    "1",
+    "enforcing",
+    "0",
+    "0",
+    "0",
+    "1",
+    "user",
+    "release-keys",
+    "1",
+    NULL
+};
+
+ static void workaround_snet_properties() {
+
+     // Hide all sensitive props
+    for (int i = 0; snet_prop_key[i]; ++i) {
+        property_override(snet_prop_key[i], snet_prop_value[i]);
+    }
+
+}
+
 void vendor_load_properties() {
     std::string hwname = GetProperty("ro.boot.hwname", "");
 
@@ -88,14 +130,14 @@ void vendor_load_properties() {
         model = "M2007J20CG";
         mod_device = "surya_global";
 	name = "surya_global";
-	fingerprint = "POCO/surya_eea/surya:11/RKQ1.200826.002/V12.5.4.0.RJGMIXM:user/release-keys";
+	fingerprint = "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys";
 	description = "surya_eea-user 11 RKQ1.200826.002 V12.5.4.0.RJGMIXM release-keys";
     } else if (hwname == "karna") {
 	device = "karna";
         model = "M2007J20CI";
         mod_device = "surya_in_global";
 	name = "karna_in";
-	fingerprint = "POCO/surya_in/karna:11/RKQ1.200826.002/V12.5.4.0.RJGMIXM:user/release-keys";
+	fingerprint = "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys";
 	description = "surya_in-user 11 RKQ1.200826.002 V12.5.4.0.RJGMIXM release-keys";
    }
 
@@ -109,4 +151,6 @@ void vendor_load_properties() {
     if (mod_device != "") {
         property_override("ro.product.mod_device", mod_device.c_str());
     }
+    // Workaround SafetyNet
+    workaround_snet_properties();
 }
