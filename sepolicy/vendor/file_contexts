@@ -53,3 +53,5 @@
  
 # SPI IR
 /dev/spidev0.1                                                    u:object_r:spidev_device:s0
+
+/dsp(/.*)?                      u:object_r:adsprpcd_file:s0
