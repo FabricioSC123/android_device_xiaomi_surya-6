@@ -5,7 +5,7 @@ LOCAL_MODULE := RemovePkgs
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_OVERRIDES_PACKAGES := \
-	Flipendo \
+	TurboPrebuilt \
 	AndroidAutoStubPrebuilt \
 	YouTube \
 	Videos \
