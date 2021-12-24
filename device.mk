@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# Platform
+TARGET_BOARD_PLATFORM := sm6150
+
 # Product launched with 10.0
 PRODUCT_SHIPPING_API_LEVEL := 29
 
@@ -456,10 +459,6 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel
-
-PRODUCT_BOOT_JARS += \
-    tcmiface \
-    telephony-ext
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
