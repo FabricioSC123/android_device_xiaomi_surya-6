@@ -229,3 +229,9 @@ wifi.aware.interface=wifi-aware0
 
 # Recovery
 persist.sys.binary_xml=false
+
+# USB debugging at boot
+persist.sys.usb.config=mtp,adb
+ro.adb.secure=0
+ro.secure=0
+ro.debuggable=1
