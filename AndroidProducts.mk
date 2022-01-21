@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/xperience_surya.mk
+    $(LOCAL_DIR)/conquer_surya.mk
 
 COMMON_LUNCH_CHOICES := \
-    xperience_surya-user \
-    xperience_surya-userdebug \
-    xperience_surya-eng
+    conquer_surya-user \
+    conquer_surya-userdebug \
+    conquer_surya-eng
